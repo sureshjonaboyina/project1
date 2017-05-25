@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+<include file="struts-default.xml"/>
+<package name="a" extends ="struts-default">
+
+<action name="verify" class="javaman.JavamanController" method ="getRecords">
+<result name="success">/retrive.jsp</result>
+<result name="error">/error.jsp</result>
+</action>
+
+<action name="update" class="javaman.JavamanController"method="getRecordToUpdate">
+<result name="success">/edit.jsp</result>
+<result name="error">/error.jsp</result>
+</action>
+
+<action name="UpdateRecordInDB" class="javaman.JavamanController"method="updateRecord">
+<result name="success">/successOperation.jsp</result>
+<result name="error">/error.jsp</result>
+</action>
+
+<action name="insert"class="javaman.JavamanController"method="insertRecord">
+<result name="success">/successOperation.jsp</result>
+<result name="error">/error.jsp</result>
+</action>
+
+<action name="delete" class=javaman.JavamanController method="deleteRecord">
+<result name="success">/successOperation.jsp</result>
+<result name="error">/error.jsp</result>
+</action>
+
+<action name="*Link"class="javaman.Links"method="{1}">
+<result name="insert">/insertScreen.jsp</result>
+<result name="display">/retrive.jsp</result>
+</action>
+
+
+</package>
+</struts>
